@@ -1,15 +1,52 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include <SPI.h>
+#include <MFRC522.h>
 
-int main () {
+#define SS_PIN 5
+#define RST_PIN 22
 
-    string in;
+MFRC522 mfrc522(SS_PIN, RST_PIN);
 
-    cout << "Escreva sua única palavra aqui: ";
-    cin >> in;
+// Lista de UIDs autorizados (4 bytes cada)
+byte uidAutorizado[][4] = {
+  {0x33, 0xA3, 0xD6, 0x2F},
+  {0x08, 0xF4, 0x2E, 0x42}
+};
 
-    cout << in;
+const int numCartoes = sizeof(uidAutorizado) / sizeof(uidAutorizado[0]); // Número de cartões cadastrados
 
-    return 0;
+void setup() {
+  Serial.begin(115200);
+  SPI.begin();
+  mfrc522.PCD_Init();
+  Serial.println("Aproxime um cartão RFID...");
+}
+
+void loop() {
+  if (!mfrc522.PICC_IsNewCardPresent()) return;
+  if (!mfrc522.PICC_ReadCardSerial()) return;
+
+  // Exibe o UID do cartão no Serial Monitor
+  Serial.print("UID: ");
+  for (byte i = 0; i < mfrc522.uid.size; i++) {
+    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+    Serial.print(mfrc522.uid.uidByte[i], HEX);
+  }
+  Serial.println();
+
+  // Verifica se o UID lido está na lista de autorizados
+  bool autorizado = false;
+  for (int i = 0; i < numCartoes; i++) {
+    if (memcmp(mfrc522.uid.uidByte, uidAutorizado[i], mfrc522.uid.size) == 0) {
+      autorizado = true;
+      break;
+    }
+  }
+
+  if (autorizado) {
+    Serial.println("Acesso Permitido!");
+  } else {
+    Serial.println("Acesso Negado!");
+  }
+
+  mfrc522.PICC_HaltA();
 }

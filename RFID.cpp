@@ -1,10 +1,14 @@
-#include <SPI.h>
 #include <MFRC522.h>
+#include <WiFi.h>
+#include <SPI.h>
 
 #define SS_PIN 5
 #define RST_PIN 22
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+const char* ssid = "///";
+const char* pass = "///";
 
 // Lista de UIDs autorizados (4 bytes cada)
 byte uidAutorizado[][4] = {
@@ -18,12 +22,23 @@ void setup() {
   Serial.begin(115200);
   SPI.begin();
   mfrc522.PCD_Init();
+  WiFi.begin(ssid, pass);
+
+  Serial.print("Conectando a rede...");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay (500);
+    Serial.print(".");
+  }
+
+  Serial.println("\nWi-Fi Conectado!");
   Serial.println("Aproxime um cartão RFID...");
 }
-
+  
 void loop() {
   if (!mfrc522.PICC_IsNewCardPresent()) return;
   if (!mfrc522.PICC_ReadCardSerial()) return;
+
 
   // Exibe o UID do cartão no Serial Monitor
   Serial.print("UID: ");

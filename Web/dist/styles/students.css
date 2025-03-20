@@ -1,0 +1,77 @@
+body {
+      font-family: "Raleway", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    
+    header {
+      background-color: #B2ABBF;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .navbar h1 {
+      margin: 0;
+    }
+    
+    .navbar .back-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+    
+    .search-section {
+      margin: 2rem auto;
+      text-align: center;
+    }
+    
+    #search-input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 50%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .table-section {
+      margin: 2rem auto;
+      width: 80%;
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: white;
+    }
+    
+    thead {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .table-head:hover {
+      background-color: #4CAF50 !important;
+      color: white;
+    }
+    
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    .tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .tr:hover {
+      background-color: #f1f1f1;
+    }

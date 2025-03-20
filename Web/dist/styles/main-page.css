@@ -1,0 +1,92 @@
+.navbar {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+}
+
+.navbar h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+      transition: all 0.3s;
+}
+
+.navbar h1:hover {
+      cursor: pointer;
+      scale: 1.1;
+}
+
+.nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.nav-links a {
+      margin: 0 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      transition: all 0.3s;
+}
+
+.project-description {
+      margin: 1rem;
+      margin-top: 6rem;
+}
+
+.cards {
+      display: grid;
+      grid-template-columns: 15rem 15rem 15rem;
+      gap: 10rem;
+      padding: 4rem;
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+}
+
+.cards .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+      height: 20rem;
+}
+
+.cards .card:hover {
+      scale: 1.1;
+      cursor: pointer;
+}
+
+.cards .card p {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #333;
+      
+}
+
+.card-image {
+      width: 100%;
+      height: 15rem;
+      border-radius: 0.5rem;
+      object-fit: cover;
+}
+
+.about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+}
+
+.about article {
+      margin: 0.25rem 5rem;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles/students.css" />
+    <title>Alunos</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1>Alunos</h1>
+        <a href="../index.html" class="back-link">Voltar</a>
+      </nav>
+    </header>
+    <main>
+      <section class="search-section">
+        <label for="search-input">Buscar aluno:</label>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Digite o nome ou matrícula do aluno"
+        />
+      </section>
+      <section class="table-section">
+        <table id="students-table">
+          <thead class="table-head">
+            <tr>
+              <th>Nome</th>
+              <th>Série</th>
+              <th>Matrícula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr">
+              <td>João Silva</td>
+              <td>8º Ano</td>
+              <td>2023001</td>
+            </tr>
+            <tr class="tr">
+              <td>Maria Oliveira</td>
+              <td>9º Ano</td>
+              <td>2023002</td>
+            </tr>
+            <tr class="tr">
+              <td>Carlos Santos</td>
+              <td>7º Ano</td>
+              <td>2023003</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="students-container"></div>
+      </section>
+    </main>
+    <script src="../js/students.js"></script>
+  </body>
+</html>

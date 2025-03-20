@@ -1,0 +1,28 @@
+{
+  "name": "rfid_score",
+  "version": "1.0.0",
+  "description": "Um aplicativo para criar um sistema de ponto na escola",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atalison/Controle-de-Presenca.git"
+  },
+  "author": "Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atalison/Controle-de-Presenca/issues"
+  },
+  "homepage": "https://github.com/Atalison/Controle-de-Presenca#readme",
+  "dependencies": {
+    "@types/gapi": "^0.0.47",
+    "@types/gapi.auth2": "^0.0.61",
+    "@types/gapi.client": "^1.0.8",
+    "googleapis": "^146.0.0",
+    "typescript": "^5.8.2"
+  }
+}
